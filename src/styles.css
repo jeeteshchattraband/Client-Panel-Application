@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+.alert-danger p{
+  font-style: italic;
+  color: red;
+  margin: 0;
+  padding: 0;
+}
+.alert-success p{
+  font-style: italic;
+  color: #0210df;
+  margin: 0;
+  padding: 0;
+}

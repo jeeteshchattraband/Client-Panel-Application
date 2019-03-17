@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-md navbar-dark customBg">
+  <a class="navbar-brand " routerLink="/">
+    <img src="assets/client.png" width="50px">
+  </a>
+
+  <button class="navbar-toggler" type="button" *ngIf="prop && showDash"
+          data-toggle="collapse" data-target="#navbarsExample04"
+          aria-controls="navbarsExample04" aria-expanded="false"
+          aria-label="Toggle navigation" (click)="prop =!prop">
+    <span class="fa fa-angle-double-down customSpan"></span>
+  </button>
+  <button class="navbar-toggler " type="button" *ngIf="!prop && showDash"
+          data-toggle="collapse" data-target="#navbarsExample04"
+          aria-controls="navbarsExample04" aria-expanded="false"
+          aria-label="Toggle navigation" (click)="prop =!prop">
+    <span class="fa fa-angle-double-up customSpan"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04">
+    <ul class="navbar-nav mr-auto">
+      <flash-messages></flash-messages>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <!--<li *ngIf="!isLoggedIn && showRegister" class="nav-item">-->
+        <!--<a class="navbar-brand customFont" routerLink="/register">Register</a>-->
+      <!--</li>-->
+      <!--<li *ngIf="!isLoggedIn && showRegister" class="nav-item">-->
+        <!--<a class="navbar-brand customFont" routerLink="/login">Login</a>-->
+      <!--</li>-->
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a class="navbar-brand customFont" href="#">{{loggedInUser}}</a>
+      </li>
+      <li *ngIf="isLoggedIn" class="nav-item">
+        <a class="navbar-brand customFont" routerLink="/settings">Settings</a>
+      </li>
+      <li *ngIf="isLoggedIn" class="nav-item customAnchor">
+        <a class="navbar-brand  customAnchor"   (click)="onLogOutClick()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

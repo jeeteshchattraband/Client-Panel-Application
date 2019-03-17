@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-secondary customBtn buttons "
+            routerLink="/"
+    ><span><i class="fa fa-backward customBack"></i>
+      <i class="fa fa-bars customBack"></i>  Back</span>
+    </button>
+  </div>
+</div>
+<br>
+<flash-messages></flash-messages>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card card-body">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>{{client.firstName}} {{client.lastName}}</h5>
+
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-dark updateBtn pull-right mt-1"
+                    routerLink="/client/edit/{{id}}">Edit
+              <span><i class="fa fa-pencil"></i></span>
+            </button>
+          </div>
+          <div class="col-md-4">
+            <button class="btn btn-danger deleteBtn pull-right mt-1" (click)="onDelete()">
+              <span>Delete <i class="fa fa-remove"></i></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="card card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card card-body">
+              <p>Client ID: {{client.id}}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-body">
+              <div class="row">
+                <div class="col-md-6">
+                  <p>Balance: <span [class.text-danger]="hasBalance"
+                                    [class.text-success]="!hasBalance">
+                {{client.balance | currency: 'INR'}}</span>
+                  </p>
+                </div>
+                <div class="col-md-6">
+                  <button class="btn btn-secondary btn-sm pencilBtn"
+                          (click)="showBalanceUpdateInput = !showBalanceUpdateInput">
+                    <i class="fa fa-pencil"></i>
+                  </button>
+                  <div class="clearfix"><br>
+                    <form *ngIf="showBalanceUpdateInput"
+                          (submit)="updateBalance(id)">
+                      <input type="number" name="balance"
+                            class="form-control" [(ngModel)]="client.balance"><br>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <button class="btn btn-primary btn-block" type="button"
+                                  data-toggle="modal" data-target="#myModal"
+                                  (click)="updateBalance()">Update</button>
+                        </div>
+                        <div class="col-md-6">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card card-body">
+        <p>Contact Email: {{client.email}}</p>
+        <p>Contact Phone: {{client.phone}}</p>
+      </div>
+  </div>
+</div>
+</div>

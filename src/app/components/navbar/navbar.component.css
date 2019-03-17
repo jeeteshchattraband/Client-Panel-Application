@@ -1,0 +1,18 @@
+.customBg{
+  background-color: rgb(223, 170, 0);
+  color: black;
+}
+
+.customFont{
+  color: black;
+}
+.customSpan{
+  color: #000000;
+  font-size: 30px;
+}
+.customAnchor{
+  cursor: pointer;
+}
+.customAnchor:hover{
+ color: white;
+}

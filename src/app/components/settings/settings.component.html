@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-4">
+    <button class="btn btn-secondary customBtn buttons "
+            routerLink="/"
+    ><span><i class="fa fa-backward customBack"></i>
+      <i class="fa fa-bars customBack"></i>  Back</span>
+    </button>
+  </div>
+  <div class="col-md-8">
+    <div class="card box">
+      <div class="card-header customHeader">
+        Edit Settings
+      </div>
+      <div class="card-body customCard ">
+        <form (submit)="onSubmit()">
+          <div class="form-group">
+            <label>Allow Registration &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            <input type="checkbox" name="allowRegistration"
+                   [checked]="settings.allowRegistration"
+                   (change)="settings.allowRegistration = !settings.allowRegistration">
+          </div>
+
+          <div class="form-group">
+            <label>Disable Balance On Add </label>
+            <input type="checkbox" name="disableBalanceOnAdd"
+                   [checked]="settings.disableBalanceOnAdd"
+                   (change)="settings.disableBalanceOnAdd = !settings.disableBalanceOnAdd">
+          </div>
+
+          <div class="form-group">
+            <label>Disable Balance On Edit&nbsp;</label>
+            <input type="checkbox" name="disableBalanceOnEdit"
+                   [checked]="settings.disableBalanceOnEdit"
+                   (change)="settings.disableBalanceOnEdit = !settings.disableBalanceOnEdit">
+          </div>
+
+         <div class="row">
+           <div class="col-md-4">
+             <input type="submit" value="Submit"
+                    class="btn btn-secondary btn-block box">
+           </div>
+           <div class="col-md-8"></div>
+         </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
+<flash-messages></flash-messages>
